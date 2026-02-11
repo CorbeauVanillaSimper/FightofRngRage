@@ -15,4 +15,12 @@ public class AndroidLauncher extends AndroidApplication {
         configuration.useImmersiveMode = true; // Recommended, but not required.
         initialize(new FightofRngRage(), configuration);
     }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        // Exit the app when switching away
+        finish();
+        System.exit(0);
+    }
 }
